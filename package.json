@@ -6,14 +6,14 @@
   "scripts": {
     "precommit": "lint-staged",
     "prepush": "npm run lint && npm run format",
-    "format": "prettier \"**/src/*.js\" --write",
-    "lint": "eslint \"**/src/*.js\" --quiet --fix",
+    "format": "prettier \"**/src/*.js\" -l",
+    "lint": "eslint \"**/src/*.js\" --quiet",
     "eslint:init": "eslint --init",
     "test": "echo \"Doing the testing thing\"",
     "kosher": "npm run lint && npm run format && npm run test"
   },
   "lint-staged": {
-    "**/src/*.js": ["npm run kosher", "git add"]
+    "**/src/*.js": ["eslint --quiet --fix", "prettier --write", "git add"]
   },
   "repository": {
     "type": "git",
