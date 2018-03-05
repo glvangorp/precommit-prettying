@@ -1,0 +1,36 @@
+{
+  "name": "precommit-prettying",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "eslint \"src/**\"",
+    "precommit": "lint-staged",
+    "format": "prettier --write",
+    "lint": "eslint \"**/*.{js,jsx}\" --quiet",
+    "eslint:init": "eslint --init"
+  },
+  "lint-staged": {
+    "*.{js,json,css,md}": ["prettier --write", "git add"]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glvangorp/precommit-prettying.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/glvangorp/precommit-prettying/issues"
+  },
+  "homepage": "https://github.com/glvangorp/precommit-prettying#readme",
+  "devDependencies": {
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.9.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.0",
+    "prettier": "1.11.1"
+  }
+}
