@@ -4,15 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "eslint": "eslint \"src/**\"",
     "precommit": "lint-staged",
+    "prepush": "npm run lint && npm run format",
     "format": "prettier --write",
-    "lint": "eslint \"**/*.{js,jsx}\" --quiet",
-    "eslint:init": "eslint --init"
+    "lint": "eslint \"**/*.{js}\" --quiet",
+    "eslint:init": "eslint --init",
+    "test": "echo \"Doing the testing thing\"",
+    "kosher": "npm run lint && npm run format && npm run test"
   },
   "lint-staged": {
-    "*.{js,json,css,md}": ["prettier --write", "git add"]
+    "src/*.{js}": ["npm run kosher", "git add"],
+    "src/*.{json,css,md}": ["some-other-linter"]
   },
   "repository": {
     "type": "git",
