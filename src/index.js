@@ -1,6 +1,6 @@
-varf logToConsole = msg () {
-  console.log(msg)
-}
+const logToConsole = msg => {
+  console.log(msg);
+};
 
-    let message       =  'my message to log';
-    logToConsole     (message);
+const message = 'my message to log';
+logToConsole(message);

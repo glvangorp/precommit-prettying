@@ -13,7 +13,7 @@
     "kosher": "npm run lint && npm run format && npm run test"
   },
   "lint-staged": {
-    "**/src/*.{js}": ["npm run kosher", "git add"]
+    "**/src/*.js": ["npm run kosher", "git add"]
   },
   "repository": {
     "type": "git",
